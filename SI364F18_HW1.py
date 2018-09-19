@@ -135,11 +135,17 @@ def getting_movie_info():
         python_obj = json.loads(text)
         if year == "Year":
             info_year = python_obj["Year"]
+        else:
+            info_year = "Box not checked"
         if runtime == "Runtime":
             info_runtime = python_obj["Runtime"]
+        else:
+            info_runtime = "Box not checked"
         if rated == "Rated":
             info_rated = python_obj["Rated"]
-        return "{} <br> Name: {} <br> Year:{} <br> Runtime:{} <br> Rating:{}".format(formstring, name, info_year, info_runtime, info_rated)
+        else:
+            info_rated = "Box not checked"
+        return "{} <br> Name: {} <br> Year: {} <br> Runtime: {} <br> Rating: {}".format(formstring, name, info_year, info_runtime, info_rated)
 
     return formstring
 
